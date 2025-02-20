@@ -1,0 +1,7 @@
+dydx-v3-python
+xgboost==2.0.3  # Versión compatible con CUDA 12
+vectorbt
+python-dotenv
+pandas
+numpy
+python-dateutil

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  trading-bot:
+    build: .
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # Habilita todas las GPUs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]  # Reserva recursos de GPU
+    volumes:
+      - ./models:/app/models  # Mapea la carpeta de modelos
+    restart: unless-stopped  # Reinicia el contenedor si se detiene
